@@ -1,0 +1,493 @@
+º/* ESTILOS GENERALES */
+body {
+  background: #d1defa;
+  font-family: sans-serif, Arial, Helvetica;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+.layout {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-areas:
+    "header header header header"
+    "nav nav nav nav"
+    "content content content lateral"
+    "footer footer footer footer ";
+
+  grid-template-rows: 100px 70px auto 70px;
+  grid-template-columns: 1fr 1fr 1fr 25%;
+}
+
+/* ESTILOS CABECERA */
+.header {
+  grid-area: header;
+
+  background: white;
+  text-align: left;
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  background: linear-gradient(90deg, #03228f 10%, #0e73e4 100%);
+  width: 40px;
+  height: 40px;
+  border-radius: 300px;
+  margin-top: 30px;
+}
+
+.play {
+  width: 0;
+  height: 0;
+  margin-top: 15px;
+  margin-left: 16px;
+  border-left: 12px solid white;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+}
+
+.header h1 {
+  margin-left: 15px;
+  margin-top: 30px;
+}
+
+/* ESTILOS BARRA NAVEGACION */
+.nav {
+  grid-area: nav;
+  background: linear-gradient(90deg, #03228f 10%, #0e73e4 100%);
+}
+
+.nav > ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.nav li {
+  padding: 10px;
+}
+
+.nav a {
+  display: block;
+  margin-left: 30px;
+  margin-right: 30px;
+  font-size: 18px;
+  font-weight: lighter;
+  color: white;
+  text-decoration: none;
+  transition: all 300ms;
+}
+.nav a:hover {
+  transform: scale(1.1, 1.1);
+}
+
+/* selec para el navbar*/
+/* Agrega estas reglas de estilo para el select */
+.nav select {
+  padding: 8px;
+  font-size: 16px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+.nav select:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para las opciones dentro del select */
+.nav select option {
+  background-color: #03228f;
+  color: white;
+}
+
+/* Estilo para el hover de las opciones dentro del select */
+.nav select option:hover {
+  background-color: #0e73e4;
+}
+
+/* fin  para el navbar*/
+
+/* ESTILOS PARA EL CONTENIDO PRINCIPAL */
+.content {
+  grid-area: content;
+  background: #f6f7f9;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: initial;
+  flex-grow: 1;
+}
+
+.articulo-item {
+  flex-grow: 1;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px #ddd;
+  margin: 20px;
+  margin-left: 11px;
+  margin-right: 11px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-left: 25px;
+  padding-right: 25px;
+
+  /* aca */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  max-height: 200px;
+}
+
+.articulo-item .mascara {
+  width: 20%;
+  overflow: hidden;
+  margin-right: 40px;
+}
+.articulo-item .mascara img {
+  width: 100%;
+}
+.articulo-item h3 {
+  font-size: 30px;
+}
+.articulo-item h3 a {
+  text-decoration: none;
+  color: black;
+}
+.articulo-item h3 a:hover {
+  color: blue;
+}
+
+.jumbo {
+  width: 85%;
+  padding: 55px;
+  padding-bottom: 75px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px #ddd;
+  margin: 25px auto;
+}
+
+.jumbo h1 {
+  font-size: 30px;
+  color: #444;
+}
+
+.jumbo p {
+  display: block;
+  margin-bottom: 40px;
+}
+
+.jumbo .mascara {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+.jumbo .mascara img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ajusta la imagen para que quepa completamente sin cortarla */
+}
+
+.button,
+button,
+input[type="submit"],
+input[type="button"],
+.edit {
+  text-decoration: none;
+  width: 100px;
+  background: #0b70e1;
+  color: white;
+  border: 0;
+  outline: 0;
+  padding: 15px;
+  border-radius: 3px;
+  margin-top: 15px;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+.articulo-item .edit {
+  margin-right: 20px;
+}
+.articulo-item .edit:hover {
+  background: #e77b00;
+}
+
+.articulo-item .delete:hover {
+  background: #9b0202;
+}
+
+/* ESTILOS BARRA LATERAL */
+.lateral {
+  grid-area: lateral;
+  background: #f6f7f9;
+  border-left: 1px solid #ddd;
+  padding: 20px;
+  min-height: 320px;
+}
+
+.lateral > div {
+  box-sizing: border-box;
+  width: 90%;
+  margin: 20px;
+  padding: 20px;
+  padding-top: 10px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px #ddd;
+}
+
+input[type="text"],
+textarea {
+  display: block;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 5px;
+  background: #f6f7f9;
+  color: #454545;
+  width: 80%;
+  opacity: 4;
+  outline: 0;
+  border-color: transparent;
+}
+
+.form-group {
+  width: 50%;
+  margin: 0 auto;
+}
+.form-group label {
+  display: block;
+  text-align: left;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="file"],
+.form-group textarea {
+  border: 1px solid #ddd;
+  outline: 0;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+/* ESTILOS PARA EL PIE DE PAGINA */
+.footer {
+  grid-area: footer;
+  background: #d1defa;
+  color: #454545;
+  border-top: 1px solid white;
+  text-align: left;
+  line-height: 28px;
+  padding-left: 155px;
+}
+
+.footer a {
+  color: #0b468a;
+  text-decoration: none;
+}
+
+.no-encontrado {
+  color: red;
+}
+
+.articulo-item .description {
+  max-height: 2.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-wrap: break-word;
+  max-width: 250px;
+}
+
+.articulo-item .description:hover {
+  max-height: none;
+}
+
+.title {
+  max-width: 300px;
+  word-wrap: break-word;
+}
+
+.edicion {
+  background: #f6f7f9;
+  border-left: 1px solid #ddd;
+  padding: 20px;
+}
+
+.edicion input[type="text"],
+.edicion input[type="text"],
+.edicion textarea {
+  display: block;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 5px;
+  color: black;
+  background: white;
+  width: 80%;
+  opacity: 4;
+  outline: 0;
+  border-color: transparent;
+}
+
+.explicaciones {
+  text-align: left;
+}
+.explicaciones h1 {
+  text-align: center;
+  font-size: 3em;
+  text-decoration: underline;
+}
+
+.explicaciones li {
+  list-style: decimal;
+}
+
+.explicaciones li p {
+  font-size: 24px;
+  margin: 10px;
+}
+.explicaciones li pre code {
+  font-size: 20px;
+  white-space: pre-wrap;
+}
+.explicaciones li pre {
+  margin: 10px;
+}
+
+.jumbo ul {
+  list-style-type: none; /* Quita los estilos de viñeta/bolita */
+  padding: 0; /* Quita el espacio interno predeterminado de la lista */
+  text-align: left; /* Alinea los elementos a la izquierda */
+}
+
+.Backend_Routes {
+  display: flex;
+  flex-direction: column;
+  /* alinear los elementos en la parte superior */
+}
+
+.Index_BackEnd h2 {
+  color: #3a52aa; /* Color del texto */
+  font-size: xx-large;
+}
+.mascara_articulo {
+  /* centrar todo */
+  text-align: center;
+}
+
+/* hacelo responsive, max view  450 px*/
+@media screen and (max-width: 450px) {
+  /* hace responsive el layuout */
+  .layout {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "nav"
+      "lateral"
+      "content"
+      "footer";
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-columns: auto;
+    justify-items: center;
+    align-items: center;
+  }
+  .nav {
+    width: 100%;
+  }
+
+  .nav > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+  }
+  .lateral {
+    width: 95%;
+    margin-top: 5px;
+    border-radius: 5px;
+    min-height: 100px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 5px;
+  }
+
+  .content {
+    width: 95%;
+    height: auto;
+  }
+  .jumbo {
+    width: 90%; /* Hacer que ocupe el ancho completo en pantallas pequeñas */
+    padding: 10px; /* Reducir el espacio interno */
+    padding-bottom: 40px; /* Reducir el espacio inferior */
+  }
+  .footer {
+    width: 95%;
+    text-align: right;
+    padding-left: 10px; /* Reducir el espacio izquierdo en pantallas pequeñas */
+    padding-right: 10px; /* Reducir el espacio derecho en pantallas pequeñas */
+    text-align: center; /* Centrar el texto en pantallas pequeñas */
+  }
+  .header {
+    width: 80%;
+  }
+  .articulo-item {
+    max-height: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .articulo-item .mascara {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+  }
+  .articulo-item .mascara img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ajusta la imagen para que quepa completamente sin cortarla */
+  }
+
+  .explicaciones h1 {
+    font-size: 2em; /* Reducir el tamaño de la fuente para pantallas más pequeñas */
+  }
+
+  .explicaciones li {
+    white-space: pre-wrap;
+    /* padding-left: 0.5em; 
+    margin-left: 1.5em; */
+  }
+
+  .explicaciones li p {
+    white-space: pre-wrap;
+    font-size: 18px; /* Reducir el tamaño de la fuente para pantallas más pequeñas */
+  }
+
+  .explicaciones li pre code {
+    font-size: 16px; /* Reducir el tamaño de la fuente para pantallas más pequeñas */
+    /* hacer los saltos de linea */
+    white-space: pre-wrap;
+  }
+
+  .Index_BackEnd h2 {
+    font-size: large; /* Reducir el tamaño de la fuente para pantallas más pequeñas */
+    /* justificar texto */
+    text-align: justify;
+  }
+}
