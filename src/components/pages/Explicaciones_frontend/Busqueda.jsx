@@ -23,7 +23,7 @@ const Busqueda = () => {
   }, [params]);
 
   const conseguir_Articulos = async () => {
-    const url = Global.url + "buscar/" + params.busqueda;
+    const url = Global.backend + "buscar/" + params.busqueda;
     const { datos, cargando } = await Ajax_helpers(url, "GET");
     setLoading(cargando);
 

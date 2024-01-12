@@ -19,7 +19,7 @@ const Articulos = () => {
   }, []);
 
   const conseguir_Articulos = async () => {
-    const url = Global.url + "articulos";
+    const url = Global.backend + "articulos";
     const { datos, cargando } = await Ajax_helpers(url, "GET");
     setLoading(cargando);
 
@@ -76,7 +76,7 @@ export default Articulos;
     }, []);
 
     const conseguir_Articulo = async () => {
-      const url = Global.url + "articulo/" + params.id;
+      const url = Global.backend + "articulo/" + params.id;
       const { datos, cargando } = await Ajax_helpers(url, "GET");
       setLoading(cargando);
 
@@ -94,7 +94,7 @@ export default Articulos;
           <div className="mascara">
             {articulo.imagen != "default.png" && (
               <img
-                src={Global.url + "imagen/" + articulo.imagen}
+                src={Global.backend + "imagen/" + articulo.imagen}
                 alt="no hay imagen"
               />
             )}
@@ -125,7 +125,7 @@ export default Articulos;
     const eliminar = async (id) => {
       try {
         let { datos } = await Ajax_helpers(
-          Global.url + "articulo/" + id,
+          Global.backend + "articulo/" + id,
           "DELETE"
         );
 
@@ -144,7 +144,7 @@ export default Articulos;
     <article className="articulo-item" key={item._id}>
       <div className="mascara">
         {item.imagen != "default.png" && (
-          <img src={Global.url + "imagen/" + item.imagen} alt="no hay imagen" />
+          <img src={Global.backend + "imagen/" + item.imagen} alt="no hay imagen" />
         )}
         {item.imagen === "default.png" && (
           <img

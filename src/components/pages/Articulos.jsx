@@ -13,7 +13,7 @@ const Articulos = () => {
   }, []);
 
   const conseguir_Articulos = async () => {
-    const url = Global.url + "articulos";
+    const url = Global.backend + "articulos";
     const { datos, cargando } = await Ajax_helpers(url, "GET");
     setLoading(cargando);
 

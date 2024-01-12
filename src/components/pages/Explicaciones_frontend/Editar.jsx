@@ -27,7 +27,7 @@ const Editar = () => {
 
   const conseguir_Articulo = async () => {
     try {
-      const url = Global.url + "articulo/" + params.id;
+      const url = Global.backend + "articulo/" + params.id;
       const { datos } = await Ajax_helpers(url, "GET");
 
       if (datos.status === "success") {
@@ -53,7 +53,7 @@ const Editar = () => {
 
       // Guardar el artículo
       const { datos } = await Ajax_helpers(
-        Global.url + "articulo/" + params.id,
+        Global.backend + "articulo/" + params.id,
         "PUT",
         nuevo_Articulo
       );
@@ -67,7 +67,7 @@ const Editar = () => {
           formData.append("file0", fileInput.files[0]);
 
           const subir_imagen = await Ajax_helpers(
-            Global.url + "subir-imagen/" + datos.articulo._id,
+            Global.backend + "subir-imagen/" + datos.articulo._id,
             "POST",
             formData,
             true
@@ -82,7 +82,7 @@ const Editar = () => {
         } else {
           // Conservar la imagen existente si no se selecciona un nuevo archivo
           const { datos } = await Ajax_helpers(
-            Global.url + "/articulo/" + params.id,
+            Global.backend + "/articulo/" + params.id,
             "PUT",
             { ...nuevo_Articulo, imagen: articulo.imagen }
           );
@@ -142,7 +142,7 @@ const Editar = () => {
           <div className="mascara">
             {articulo.imagen != "default.png" && (
               <img
-                src={Global.url + "imagen/" + articulo.imagen}
+                src={Global.backend + "imagen/" + articulo.imagen}
                 alt="no hay imagen"
               />
             )}

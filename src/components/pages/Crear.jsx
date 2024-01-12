@@ -8,14 +8,14 @@ const Crear = () => {
   const { formulario, enviado, cambiado } = useForm({});
   const [resultado, setResultado] = useState();
   const navigate = useNavigate();
- 
+
   const guardar_Articulo = async (e) => {
     e.preventDefault();
     let nuevo_Articulo = formulario;
 
     /* Guardar el articulo */
     const { datos, cargando } = await Ajax_helpers(
-      Global.url + "crear",
+      Global.backend + "crear",
       "POST",
       nuevo_Articulo
     );
@@ -31,7 +31,7 @@ const Crear = () => {
       formData.append("file0", fileInput.files[0]);
 
       const subir_imagen = await Ajax_helpers(
-        Global.url + "subir-imagen/" + datos.articulo._id,
+        Global.backend + "subir-imagen/" + datos.articulo._id,
         "POST",
         formData,
         true

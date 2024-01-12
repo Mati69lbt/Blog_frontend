@@ -6,10 +6,10 @@ import Listado from "./Listado";
 
 const Busqueda = () => {
   const [articulos, setArticulos] = useState([]);
-  
+
   const [loading, setLoading] = useState(false);
   const params = useParams();
-  
+
   useEffect(() => {
     conseguir_Articulos();
   }, []);
@@ -18,12 +18,11 @@ const Busqueda = () => {
   }, [params]);
 
   const conseguir_Articulos = async () => {
-    const url = Global.url + "buscar/" + params.busqueda;
+    const url = Global.backend + "buscar/" + params.busqueda;
     const { datos, cargando } = await Ajax_helpers(url, "GET");
     setLoading(cargando);
 
     if (datos.status === "succes") {
-  
       setArticulos(datos.articulo_encontrado);
     } else {
       setArticulos([]);

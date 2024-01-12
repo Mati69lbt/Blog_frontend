@@ -13,7 +13,7 @@ const Imagen = () => {
   }, []);
 
   const traer_Imagen = async () => {
-    const url = Global.url + "imagen/" + params.nombre;
+    const url = Global.backend + "imagen/" + params.nombre;
 
     try {
       const peticion = await fetch(url);

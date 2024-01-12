@@ -17,7 +17,7 @@ const Articulo = () => {
   }, []);
 
   const conseguir_Articulo = async () => {
-    const url = Global.url + "articulo/" + params.id;
+    const url = Global.backend + "articulo/" + params.id;
     const { datos, cargando } = await Ajax_helpers(url, "GET");
     setLoading(cargando);
 
@@ -36,7 +36,7 @@ const Articulo = () => {
             {articulo.imagen != "default.png" && (
               <Link to={"/imagen/" + articulo.imagen}>
                 <img
-                  src={Global.url + "imagen/" + articulo.imagen}
+                  src={Global.backend + "imagen/" + articulo.imagen}
                   alt="no hay imagen"
                 />
               </Link>

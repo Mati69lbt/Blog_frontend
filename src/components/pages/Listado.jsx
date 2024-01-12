@@ -7,7 +7,7 @@ const Listado = ({ articulos, setArticulos }) => {
   const eliminar = async (id) => {
     try {
       let { datos } = await Ajax_helpers(
-        Global.url + "articulo/" + id,
+        Global.backend + "articulo/" + id,
         "DELETE"
       );
 
@@ -28,7 +28,7 @@ const Listado = ({ articulos, setArticulos }) => {
         {item.imagen != "default.png" && (
           <Link to={"/imagen/" + item.imagen}>
             <img
-              src={Global.url + "imagen/" + item.imagen}
+              src={Global.backend + "imagen/" + item.imagen}
               alt="no hay imagen"
             />
           </Link>
