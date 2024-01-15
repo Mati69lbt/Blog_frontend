@@ -6,7 +6,7 @@ const Inicio = () => {
     <div className="jumbo">
       <h1>Bienvenido al Blog con React</h1>
       <p>
-        Este es un proyecto de blog utilizando MERN Stack (Mongom, Express,
+        Este es un proyecto de blog utilizando MERN Stack (Mongo, Express,
         React, Node)
       </p>
       <Link to="/articulos" className="button">
