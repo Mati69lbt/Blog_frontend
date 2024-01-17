@@ -6,17 +6,23 @@ import Global from "../../helpers/Global";
 const Listado = ({ articulos, setArticulos }) => {
   const eliminar = async (id) => {
     try {
-      let { datos } = await Ajax_helpers(
-        Global.backend + "articulo/" + id,
-        "DELETE"
+      const confirmarEliminacion = window.confirm(
+        "¿Estás seguro de que quieres eliminar este elemento?"
       );
 
-      if (datos.status === "success") {
-        let articulos_Actualizados = articulos.filter(
-          (articulo) => articulo._id !== id
+      if (confirmarEliminacion) {
+        let { datos } = await Ajax_helpers(
+          Global.backend + "articulo/" + id,
+          "DELETE"
         );
 
-        setArticulos(articulos_Actualizados);
+        if (datos.status === "success") {
+          let articulos_Actualizados = articulos.filter(
+            (articulo) => articulo._id !== id
+          );
+
+          setArticulos(articulos_Actualizados);
+        }
       }
     } catch (error) {
       console.log(error);

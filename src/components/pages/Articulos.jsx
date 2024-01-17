@@ -14,11 +14,10 @@ const Articulos = () => {
 
   const conseguir_Articulos = async () => {
     const url = Global.backend + "articulos";
-    console.log(url);
-    const { datos, cargando } = await Ajax_helpers(url, "GET");
-    console.log(datos);
-    setLoading(cargando);
+    setLoading(true);
 
+    const { datos, cargando } = await Ajax_helpers(url, "GET");
+    setLoading(cargando);
     /*
     METODO ANTERIOR
     let peticion = await fetch(url, {
@@ -35,7 +34,9 @@ const Articulos = () => {
   return (
     <>
       {loading ? (
-        "Cargando..."
+        <p className="cargando">
+          "Cargando Articulos... Espere unos segunditos..."
+        </p>
       ) : articulos.length >= 1 ? (
         <Listado articulos={articulos} setArticulos={setArticulos} />
       ) : (

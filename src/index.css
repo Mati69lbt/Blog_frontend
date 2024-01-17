@@ -392,6 +392,12 @@ textarea {
   text-align: center;
 }
 
+.cargando {
+  text-align: center;
+  color: red;
+  font-size: 26px;
+}
+
 /* hacelo responsive, max view  450 px*/
 @media screen and (max-width: 450px) {
   /* hace responsive el layuout */
